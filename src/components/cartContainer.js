@@ -1,5 +1,7 @@
 import React from 'react';
-const cartContainer = () => {
+import CartItem from './cartItem';
+
+const CartContainer = () => {
   return (
     <div>
       
@@ -7,4 +9,4 @@ const cartContainer = () => {
   );
 }
 
-export default cartContainer;
+export default CartContainer;
