@@ -14,7 +14,11 @@ const cartContainer = () => {
       </header>
     </section>
   }
-  return <div>cart continw</div>;
+  return <section className="cart">
+    <header>
+      <h2>your bag</h2>
+    </header>
+  </section>
 };
 
 export default cartContainer;
