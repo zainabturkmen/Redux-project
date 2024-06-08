@@ -1,6 +1,6 @@
 import React from "react";
 import CartItem from "./CartItem";
-import { useSelector } from "react-redux";
+import {useDispatch, useSelector } from "react-redux";
 import { store } from "../store";
 
 const CartContainer = () => {
