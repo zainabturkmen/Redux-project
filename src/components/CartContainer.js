@@ -6,7 +6,7 @@ import { store } from "../store";
 const cartContainer = () => {
   const { cartItems, total, amount } = useSelector((store) => store.cart);
 
-  if (amount > 1) {
+  if (amount < 1) {
     return (
       <section className="cart">
         <header>
@@ -33,6 +33,7 @@ const cartContainer = () => {
             total <span>${total}</span>
           </h4>
         </div>
+        <button className="btn clear-btn">clear cart</button>
       </footer>
     </section>
   );
