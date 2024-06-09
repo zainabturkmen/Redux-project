@@ -12,7 +12,9 @@ const initialState = {
 };
 
 
-export const getCartItems = createAsyncThunk("cart/")
+export const getCartItems = createAsyncThunk("cart/getCartItems", () => {
+  return fetch(url).then()
+});
 
 
 const cartSlice = createSlice({
