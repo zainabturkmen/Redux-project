@@ -3,20 +3,21 @@ import CartContainer from "./Components/CartContainer";
 import { useDispatch, useSelector } from "react-redux";
 import { calculateTotal } from "./features/cart/cartSlice";
 import { store } from "./store";
-import {useEffect} from "react"
+import { useEffect } from "react";
 import Modal from "./Components/Modal";
 
 function App() {
   const { cartItems } = useSelector((store) => store.cart);
-  const dispatch  = useDispatch()
+  const { isOpen } = useSelector((store) => store.Modal);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-   dispatch(calculateTotal())
+    dispatch(calculateTotal());
   }, [cartItems]);
 
   return (
     <main>
-      <Modal/>
+      {isOpen && <Modal />}
       <Navbar />
       <CartContainer />
     </main>
