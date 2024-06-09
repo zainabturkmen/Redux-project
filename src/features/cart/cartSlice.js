@@ -12,7 +12,7 @@ const initialState = {
   isLoading: true,
 };
 
-export const getCartItems = createAsyncThunk("cart/getCartItems", async () => {
+export const getCartItems = createAsyncThunk("cart/getCartItems", async (name) => {
   try {
     const resp = await axios(url);
     return resp.data;
