@@ -9,7 +9,7 @@ const Modal = () => {
           <button className="btn confirm-btn" type="button">
             confirm
           </button>
-          <button className="btn cancel-btn" type="button">
+          <button className="btn clear-btn" type="button">
             cancel
           </button>
         </div>
