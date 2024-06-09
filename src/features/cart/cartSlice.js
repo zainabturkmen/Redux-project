@@ -1,8 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import cartItems from "../../cartItems";
 
-const url = "https://course-api.com/react-useReducer-cart-project"
-
+const url = "https://course-api.com/react-useReducer-cart-project";
 
 const initialState = {
   cartItems: cartItems,
@@ -11,11 +10,11 @@ const initialState = {
   isLoading: true,
 };
 
-
 export const getCartItems = createAsyncThunk("cart/getCartItems", () => {
-  return fetch(url).then()
+  return fetch(url)
+    .then((resp) => resp.json())
+    .catch((error) => console.log(error));
 });
-
 
 const cartSlice = createSlice({
   name: "cart",
@@ -52,6 +51,7 @@ const cartSlice = createSlice({
 });
 console.log(cartSlice);
 
-export const { clearCart, removeItem, increase, decrease, calculateTotal } = cartSlice.actions;
+export const { clearCart, removeItem, increase, decrease, calculateTotal } =
+  cartSlice.actions;
 
 export default cartSlice.reducer;
