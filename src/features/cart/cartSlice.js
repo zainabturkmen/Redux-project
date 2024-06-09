@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import cartItems from "../../cartItems";
+import { act } from "@testing-library/react";
 
 const url = "https://course-api.com/react-useReducer-cart-project";
 
@@ -51,7 +52,15 @@ const cartSlice = createSlice({
   extraReducers:{
     [getCartItems.pending]:(state) => {
       state.isLoading = true
-    }
+    },
+    [getCartItems.fulfilled]:(state, action) => {
+      console.log(action);
+      state.isLoading = false,
+      state.cartItems = action.payload
+    },
+    [getCartItems.rejected]:(state) => {
+      state.isLoading = false
+    },
   }
 });
 console.log(cartSlice);
