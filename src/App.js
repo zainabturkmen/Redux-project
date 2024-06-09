@@ -15,6 +15,10 @@ function App() {
     dispatch(calculateTotal());
   }, [cartItems]);
 
+  useEffect(() => {
+    dispatch(getCartItems())
+  }, []);
+
   return (
     <main>
       {isOpen && <Modal />}
