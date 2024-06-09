@@ -12,6 +12,9 @@ const initialState = {
 };
 
 
+export const getCartItems = createAsyncThunk("cart/")
+
+
 const cartSlice = createSlice({
   name: "cart",
   initialState,
