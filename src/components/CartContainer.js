@@ -8,7 +8,7 @@ const CartContainer = () => {
   const dispatch = useDispatch();
   const { cartItems, total, amount } = useSelector((store) => store.cart);
 
-  if (amount > 1) {
+  if (amount < 1) {
     return (
       <section className="cart">
         <header>
